@@ -18,7 +18,7 @@ The data were obtained from the following web sites:
  
 In order to download the data we used the following bash script 
 in a m5.xlarge AWS EC2 instance with Ubuntu Server 16.04 installed. 
-
+[Script for downloading the data](https://raw.githubusercontent.com/ricardoues/data-engineering-capstone-project/master/download.sh)
  
 
 
