@@ -58,7 +58,7 @@ sudo python3 -m  pip install configparser pandas
 Finally, we will clone the repository and submit the spark script with the following commands: 
 
 ```bash
-git clone https://github.com/ricardoues/data-lake.git
+git clone https://github.com/ricardoues/data-engineering-capstone-project.git
 /usr/bin/spark-submit --verbose  --master yarn  etl.py 
 
 
