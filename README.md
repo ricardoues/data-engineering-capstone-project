@@ -33,11 +33,6 @@ The project follows the follow steps:
 * Instance type: m4.xlarge
 * Number of instance: 2
 
-Also you can run the following code in AWS CLI instead of the above instructions:
-
-```bash
-aws emr create-cluster --applications Name=Ganglia Name=Spark Name=Zeppelin --ec2-attributes '{"KeyName":"spark-cluster","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-b59d00b9","EmrManagedSlaveSecurityGroup":"sg-08b935a3e2ebc1dc8","EmrManagedMasterSecurityGroup":"sg-0445b447732160e85"}' --service-role EMR_DefaultRole --enable-debugging --release-label emr-5.20.0 --log-uri 's3n://aws-logs-637150515554-us-east-1/elasticmapreduce/' --name 'spark-cluster' --instance-groups '[{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master Instance Group"},{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core Instance Group"}]' --configurations '[{"Classification":"spark","Properties":{}}]' --scale-down-behavior TERMINATE_AT_TASK_COMPLETION --region us-east-1
-```
 
 We suggest to proceed with an EC2 key pair. Wait until the cluster has the following status: Waiting before moving on to the next step. After that connect to the master node using SSH and run the following commands in the terminal: 
 
