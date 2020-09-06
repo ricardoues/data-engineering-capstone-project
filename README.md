@@ -18,7 +18,7 @@ The project follows the follow steps:
 
 ### Files 
 
-[IPython Notebook with the information of the project](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/capstone_project.ipynb)
+[Capstone Project](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/capstone_project.ipynb)
 
 [ETL Pipeline](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/etl.py)
 
