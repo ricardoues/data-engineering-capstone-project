@@ -21,3 +21,28 @@ The project follows the follow steps:
 [IPython Notebook with the information of the project](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/capstone_project.ipynb)
 
 [ETL Pipeline](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/etl.py)
+
+
+
+### How to run the code
+
+* Sign in for AWS services, go to Amazon EMR Console
+* Select "Clusters" in the menu on the left, and click the "Create cluster" button.
+* Release: emr-5.20.0
+* Applications: Spark: Spark 2.4.0 on Hadoop 2.8.5 YARN with Ganglia 3.7.2 and Zeppelin 0.8.0
+* Instance type: m4.xlarge
+* Number of instance: 2
+
+Also you can run the following code in AWS CLI:
+
+```bash
+aws emr create-cluster --applications Name=Ganglia Name=Spark Name=Zeppelin --ec2-attributes '{"KeyName":"spark-cluster","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-b59d00b9","EmrManagedSlaveSecurityGroup":"sg-08b935a3e2ebc1dc8","EmrManagedMasterSecurityGroup":"sg-0445b447732160e85"}' --service-role EMR_DefaultRole --enable-debugging --release-label emr-5.20.0 --log-uri 's3n://aws-logs-637150515554-us-east-1/elasticmapreduce/' --name 'spark-cluster' --instance-groups '[{"InstanceCount":1,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master Instance Group"},{"InstanceCount":2,"EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":1}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core Instance Group"}]' --configurations '[{"Classification":"spark","Properties":{}}]' --scale-down-behavior TERMINATE_AT_TASK_COMPLETION --region us-east-1
+```
+
+
+
+
+
+The etl pipeline takes around two minutes to finish. 
+
+
