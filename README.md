@@ -22,7 +22,7 @@ The project follows the follow steps:
 
 [ETL Pipeline](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/etl.py)
 
-
+[SQLite database](https://github.com/ricardoues/data-engineering-capstone-project/blob/master/taxi_covid_nyc.db?raw=true)
 
 ### How to run the code
 
