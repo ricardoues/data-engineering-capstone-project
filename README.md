@@ -59,7 +59,8 @@ Finally, we will clone the repository and submit the spark script with the follo
 
 ```bash
 git clone https://github.com/ricardoues/data-engineering-capstone-project.git
+cd data-engineering-capstone-project
 /usr/bin/spark-submit --verbose  --master yarn  etl.py 
-
+```
 
 The etl pipeline takes around two minutes to finish. 
